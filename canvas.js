@@ -123,7 +123,7 @@ function autoGenerate()
         y = Math.round(Math.random()*20);
         document.getElementById("x"+i).value = x;
         document.getElementById("y"+i).value = y;
-        charges[n] = Math.round(Math.random()*300*(Math.pow(-1,Math.round(Math.random()*10))));
+        charges[n] = Math.ceil(Math.random()*300*(Math.pow(-1,Math.round(Math.random()*10))));
         document.getElementById("charge"+i).value = charges[n];
         n += 1;
     }
@@ -168,11 +168,11 @@ function electricPotential()
                     potential = calculatePotential(chargeData[0][k],chargeData[1][k],chargeData[2][k],x,y);
                     if(potential < 0)
                     {
-                        blueValue += 10*(Math.abs(potential));
+                        blueValue += 20*(Math.abs(potential));
                     }
                     else 
                     {
-                        redValue += 10*potential;
+                        redValue += 20*potential;
                     }
                     console.log(potential);
                 }
