@@ -229,10 +229,10 @@ function electricFields()
     var netField=0;
 
     var stride = 10;
-    for (var i = 0; i < canvas.width/stride; i++)
+    for (var i = 0; i < canvas.width/stride+10; i++)
     {
         var x = stride*i;
-        for(var j = 0; j < canvas.height/stride; j++)
+        for(var j = 0; j < canvas.height/stride+10; j++)
         {
             var y = stride*j;
             netFieldX = 0;
@@ -372,8 +372,8 @@ function electricForces()
         {
             x = chargeData[1][i];
             y = chargeData[2][i];
-            dx = x + (xforces[i]*stride*(1+(forces[i]/largestForce)));
-            dy = y + (yforces[i]*stride*(1+(forces[i]/largestForce)));
+            dx = x + (xforces[i]*stride*(1+(forces[i]/largestForce)^2));
+            dy = y + (yforces[i]*stride*(1+(forces[i]/largestForce)^2));
             drawArrow(x,y,dx,dy);
         }
     }
