@@ -48,12 +48,13 @@ function onCanvasClick(ev)
             netPotential += potential;
         }
     }
-    
+    netPotential = netPotential.toFixed(2)
     document.getElementById("pointpot").value = netPotential+" V";
+    
     
     var netFieldX = 0;
     var netFieldY = 0;
-    var coulombsConstant = 8.99;
+    var coulombsConstant = 8.99*Math.pow(10,9);
     for(var k = 0; k < initialChargeData[0].length; k++)
     {
         if (isNaN(initialChargeData[0][k]))
@@ -65,7 +66,7 @@ function onCanvasClick(ev)
             var dx = x - (initialChargeData[4][k]);
             var dy = y - (initialChargeData[5][k]);
             var r = Math.pow((Math.pow(dx,2) + Math.pow(dy,2)),.5);
-            var fieldMagnitude = initialChargeData[0][k]*coulombsConstant / Math.pow(r,2);
+            var fieldMagnitude = initialChargeData[0][k]*Math.pow(10,-9)*coulombsConstant / Math.pow(r,2);
             var theta = Math.abs(Math.atan(dy/dx));
             var fieldX = fieldMagnitude*Math.cos(theta);
             var fieldY = fieldMagnitude*Math.sin(theta);
@@ -97,6 +98,7 @@ function onCanvasClick(ev)
         }
     }
     var netField = Math.pow((Math.pow(netFieldX,2) + Math.pow(netFieldY,2)),.5);
+    netField = netField.toFixed(2);
     document.getElementById("pointfield").value = netField+" N/C";
     
     function calculatePotential2(q,qx,qy,x,y)
@@ -105,7 +107,7 @@ function onCanvasClick(ev)
         var dy = qy - y;
         var k = 8.99;
         var r = Math.pow((Math.pow(dx,2) + Math.pow(dy,2)),.5)*k;
-        return q/r;
+        return (k*Math.pow(10,9))*(q*Math.pow(10,-9))/(r);
     }
 }
 
