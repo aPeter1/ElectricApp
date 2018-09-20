@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- SOCIAL MEDIA CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Electric App</title>
+  </head>
+  
+  <body>
+      
+        <!--NAVIGATION BAR-->
+        <nav class="navbar navbar-expand-lg navbar fixed-top navbar-light bg-light justify-content-between">
+          <a class="navbar-brand" href="index.html">Electric App</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        
+        <section class="main-container">
+            <article class="index-intro">
+                  <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                              <h4>Instructions:</h4>
+                              <p>This programs introduces an easy and intuitive way to visualize and understand the effects of different charges on their surroundings. Simply put the value of any charge, it's coordinates (based on any X-Y coordinate system, the program will adjust) and click whether you would like to calculate the surrounding electric potential, fields or forces the charges have on each other; note that electric potential will take a moment to load. In addition, you can click anywhere on the image and below will be shown the electric potential and field magnitude at that point. If you are unfamiliar with what would be a good charge value or a normal distance or just want to see a cool image, click "Auto-Generate" to have a set of randomly selected appropriate values be inputed. Enjoy! </p>
+                              <button type="button" class="btn btn-danger" onclick="autoGenerate()">Auto-Generate</button>
+                              <p>-</p>
+                              <h6>Electric Potential</h6>
+                              <input type="text" id="pointpot" class="form-control" name="results" placeholder="Click on image">
+                              <h6>Electric Field</h6>
+                              <input type="text" id="pointfield" class="form-control" name="results" placeholder="Click on image">
+                              
+                            </div>
+                            <div class="col-sm-2">
+                              <p>Charge(&mu;C) -</p>
+                              <input type="text" id="charge1" class="form-control" name="results" placeholder="Charge #1">
+                              <input type="text" id="charge2" class="form-control" name="results" placeholder="Charge #2">
+                              <input type="text" id="charge3" class="form-control" name="results" placeholder="Charge #3">
+                              <input type="text" id="charge4" class="form-control" name="results" placeholder="Charge #4">
+                              <input type="text" id="charge5" class="form-control" name="results" placeholder="Charge #5">
+                              <input type="text" id="charge6" class="form-control" name="results" placeholder="Charge #6">
+                              <input type="text" id="charge7" class="form-control" name="results" placeholder="Charge #7">
+                              <input type="text" id="charge8" class="form-control" name="results" placeholder="Charge #8">
+                              <input type="text" id="charge9" class="form-control" name="results" placeholder="Charge #9">
+                              <input type="text" id="charge10" class="form-control" name="results" placeholder="Charge #10">
+                              <input type="text" id="charge11" class="form-control" name="results" placeholder="Charge #11">
+                              <input type="text" id="charge12" class="form-control" name="results" placeholder="Charge #12">
+                              
+                            </div>
+                            <div class="col-sm-1">
+                              <p>Position(&mu;m)</p>
+                              <input type="text" id="x1" class="form-control" name="results" placeholder="#1 X">
+                              <input type="text" id="x2" class="form-control" name="results" placeholder="#2 X">
+                              <input type="text" id="x3" class="form-control" name="results" placeholder="#3 X">
+                              <input type="text" id="x4" class="form-control" name="results" placeholder="#4 X">
+                              <input type="text" id="x5" class="form-control" name="results" placeholder="#5 X">
+                              <input type="text" id="x6" class="form-control" name="results" placeholder="#6 X">
+                              <input type="text" id="x7" class="form-control" name="results" placeholder="#7 X">
+                              <input type="text" id="x8" class="form-control" name="results" placeholder="#8 X">
+                              <input type="text" id="x9" class="form-control" name="results" placeholder="#9 X">
+                              <input type="text" id="x10" class="form-control" name="results" placeholder="#10 X">
+                              <input type="text" id="x11" class="form-control" name="results" placeholder="#11 X">
+                              <input type="text" id="x12" class="form-control" name="results" placeholder="#12 X">
+                              
+                            </div>
+                            <div class="col-sm-1">
+                              <p>-</p>
+                              <input type="text" id="y1" class="form-control" name="results" placeholder="#1 Y">
+                              <input type="text" id="y2" class="form-control" name="results" placeholder="#2 Y">
+                              <input type="text" id="y3" class="form-control" name="results" placeholder="#3 Y">
+                              <input type="text" id="y4" class="form-control" name="results" placeholder="#4 Y">
+                              <input type="text" id="y5" class="form-control" name="results" placeholder="#5 Y">
+                              <input type="text" id="y6" class="form-control" name="results" placeholder="#6 Y">
+                              <input type="text" id="y7" class="form-control" name="results" placeholder="#7 Y">
+                              <input type="text" id="y8" class="form-control" name="results" placeholder="#8 Y">
+                              <input type="text" id="y9" class="form-control" name="results" placeholder="#9 Y">
+                              <input type="text" id="y10" class="form-control" name="results" placeholder="#10 Y">
+                              <input type="text" id="y11" class="form-control" name="results" placeholder="#11 Y">
+                              <input type="text" id="y12" class="form-control" name="results" placeholder="#12 Y">
+                              
+                            </div>
+                            <div class="col-sm-4">
+                              <canvas id="canvas">
+                                
+                              </canvas>
+                            </div>
+                            
+                        </div>
+                        <p>-</p>
+                        <div class="row">
+                          
+                          <div class="col-sm-4">
+                            <button type="button" class="btn btn-success" onclick="electricPotential()">Potential</button>
+                              <button type="button" class="btn btn-success" onclick="electricFields()">Fields</button>
+                              <button type="button" class="btn btn-success" onclick="electricForces()">Forces</button>
+                          </div>
+                          <div class="col-sm-8"></div>
+                        </div>
+                        
+                        <p id="demo"></p>
+                      </div>
+                  </div>              
+            </article>
+          </section>  
+          <p>This program is the original work of Alec Petersen</p>
+
+    <script src="canvas.js"></script>
+    
+    <!-- Bootstrap Script Links -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
