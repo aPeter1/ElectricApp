@@ -12,6 +12,7 @@ c.lineTo(canvas.width,canvas.height/2);
 c.stroke();
 canvas.width=500;
 canvas.height=500;
+canvas.style.background = "white";  // a valid CSS colour.
 
 function onCanvasClick(ev)
 {
@@ -374,8 +375,8 @@ function electricForces()
         {
             x = chargeData[1][i];
             y = chargeData[2][i];
-            dx = x + (xforces[i]*stride*(1+(forces[i]/largestForce)^2));
-            dy = y + (yforces[i]*stride*(1+(forces[i]/largestForce)^2));
+            dx = x + (xforces[i]*stride*(1+(forces[i]/largestForce)));
+            dy = y + (yforces[i]*stride*(1+(forces[i]/largestForce)));
             drawArrow(x,y,dx,dy);
         }
     }
